@@ -12,11 +12,15 @@
 <h2 id="mac"></h2>
 
 <script type="text/javascript">
-document.getElementById('hello').innerHTML = "Hello world!!!";
+document.getElementById('hello').innerHTML = "Hello world again";
+
+document.getElementById('mac').innerHTML = window.MacAddress.getMacAddress();
+
+alert("did that work?");
 
 window.MacAddress.getMacAddress(
 	function(macAddress) {alert(macAddress);},function(fail) {alert(fail);}
 );
 
-document.getElementById('mac').innerHTML = window.MacAddress.getMacAddress();
+
 </script>

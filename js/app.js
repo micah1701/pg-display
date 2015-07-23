@@ -30,6 +30,13 @@ function onDeviceReady() {
                         displayit_id = data;
                         clearTimeout(t);
                         $("#mac").fadeOut('fast');
+                        
+                        // turn on "auto start" for this device on load.
+                        cordova.plugins.autoStart.enable();
+                        
+                        // keep awake (so screen doesn't dim while content is static)
+                        window.plugins.insomnia.keepAwake(function(){ alert("I'm keeping you awake now")});
+                        
                         loadContent();
                     }
                 });

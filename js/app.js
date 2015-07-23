@@ -35,7 +35,7 @@ function onDeviceReady() {
                         cordova.plugins.autoStart.enable();
                         
                         // keep awake (so screen doesn't dim while content is static)
-                        window.plugins.insomnia.keepAwake(function(){ alert("I'm keeping you awake now")});
+                        window.plugins.insomnia.keepAwake();
                         
                         loadContent();
                     }
@@ -52,7 +52,7 @@ function onDeviceReady() {
         cordova.plugins.autoStart.enable();
         
         // keep awake (so screen doesn't dim while content is static)
-        window.plugins.insomnia.keepAwake(function(){ alert("I'm keeping you awake now")});
+        window.plugins.insomnia.keepAwake();
 
         loadContent();
     }
@@ -70,6 +70,6 @@ function loadContent()
             $("#pagebody").html(data);            
         }
         $("#status").fadeOut('fast');
-        setTimeout("loadContent",60000); // reload this function in a minute
+        setTimeout("loadContent()",60000); // reload this function in a minute
     });
 }

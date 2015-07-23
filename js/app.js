@@ -13,7 +13,7 @@ function onDeviceReady() {
     if(!displayit_id)
     {
     	// reload every 30 seconds while we wait
-        setTimeout("window.location.reload();", 30000);
+        var t = setTimeout("window.location.reload();", 30000);
     	
     	window.MacAddress.getMacAddress(
     		function(macAddress) {
@@ -28,6 +28,7 @@ function onDeviceReady() {
                     else
                     {
                         displayit_id = data;
+                        clearTimeout(t);
                         $("#mac").fadeOut('fast');
                         loadContent();
                     }
@@ -40,13 +41,15 @@ function onDeviceReady() {
     }
     else
     {
+        // turn on "auto start" for this device on load.
+        cordova.plugins.autoStart.enable();
+        
+        // keep awake (so screen doesn't dim while content is static)
+        window.plugins.insomnia.keepAwake(function(){ alert("I'm keeping you awake now")});
+
         loadContent();
     }
-	// turn on "auto start" for this device on load.
-	cordova.plugins.autoStart.enable();
 	
-	// keep awake (so screen doesn't dim while content is static)
-	window.plugins.insomnia.keepAwake(function(){ alert("I'm keeping you awake now")});
 	
 } // end "on Device Ready"
 

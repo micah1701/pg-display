@@ -11,16 +11,20 @@
 <h2 id="mac"></h2>
 
 <script type="text/javascript">
-document.getElementById('hello').innerHTML = "Hello world!";
+document.getElementById('hello').innerHTML = "Hello world! (now w/ device ready state)";
 
-window.MacAddress.getMacAddress(
-	function(macAddress) {
-		alert(macAddress);
-		document.getElementById('mac').innerHTML = macAddress;
-	},	
-	function(failed) {
-		alert(failed);
-	}
-);
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady() {
 
+	window.MacAddress.getMacAddress(
+		function(macAddress) {
+			alert(macAddress);
+			document.getElementById('mac').innerHTML = macAddress;
+		},	
+		function(failed) {
+			alert(failed);
+		}
+	);
+
+}
 </script>

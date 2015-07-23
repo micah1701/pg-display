@@ -5,8 +5,6 @@ var remoteXHR = 'http://micahj.com/code/displayit/request.php';
     MACaddress = false,
     displayit_id = false;
 
-// reload every minute
-setTimeout("window.location.reload();", 60000);
 
 // set up "device ready"
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -14,6 +12,9 @@ function onDeviceReady() {
 
     if(!displayit_id)
     {
+    	// reload every 30 seconds while we wait
+        setTimeout("window.location.reload();", 30000);
+    	
     	window.MacAddress.getMacAddress(
     		function(macAddress) {
     			$("#status").html("Fetching Account info").fadeIn(0);
@@ -45,7 +46,7 @@ function onDeviceReady() {
 	cordova.plugins.autoStart.enable();
 	
 	// keep awake (so screen doesn't dim while content is static)
-	cordova.plugins.insomnia.keepAwake();
+	window.plugins.insomnia.keepAwake(function(){ alert("I'm keeping you awake now")});
 	
 } // end "on Device Ready"
 
@@ -59,5 +60,6 @@ function loadContent()
             $("#pagebody").html(data);            
         }
         $("#status").fadeOut('fast');
+        setTimeout("loadContent",60000); // reload this function in a minute
     });
 }

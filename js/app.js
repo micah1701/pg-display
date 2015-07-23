@@ -6,7 +6,7 @@ var remoteXHR = 'http://micahj.com/code/displayit/request.php';
     displayit_id = false;
 
 // reload every minute
-setTimeout("window.location.reload();",60000);
+setTimeout("window.location.reload();", 60000);
 
 // set up "device ready"
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -43,12 +43,16 @@ function onDeviceReady() {
     }
 	// turn on "auto start" for this device on load.
 	cordova.plugins.autoStart.enable();
+	
+	// keep awake (so screen doesn't dim while content is static)
+	cordova.plugins.insomnia.keepAwake();
+	
 } // end "on Device Ready"
 
 function loadContent()
 {
     $("#status").html('checking...').fadeIn(0);
-    $.get(remoteXHR,{action:'getContent',id:displayit_id},function(data){
+    $.get(remoteXHR,{action:'getContent',id: displayit_id },function(data){
         var current_display = $("#pagebody").html();
         if(data != current_display)
         {

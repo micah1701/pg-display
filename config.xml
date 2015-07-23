@@ -24,11 +24,9 @@
     
     <!-- list plugins to use -->
     <gap:plugin name="com.badrit.macaddress" version="0.1.0" />
-    
+    <gap:plugin name="nl.x-services.plugins.insomnia" version="4.0.1" />
     <gap:plugin name="com.tonikorin.cordova.plugin.autostart" source="npm" />
-    <!-- 
-    <gap:plugin platform="android" name="com.tonikorin.cordova.plugin.autostart" version="1.2.0" source="plugins.cordova.io"/>
-    -->
+    
  <!--
     <gap:plugin name="org.apache.cordova.dialogs" />
     <gap:plugin name="org.apache.cordova.battery-status" />

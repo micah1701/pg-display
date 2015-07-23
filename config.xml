@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget xmlns   = "http://www.w3.org/ns/widgets"
+        xmlns:gap   = "http://phonegap.com/ns/1.0"
+        id          = "com.sixeightinteractive.pg-display"
+        versionCode = "10" 
+        version     = "1.0.0" >
+
+    <!-- versionCode is optional and Android only -->
+
+    <name>Display It</name>
+
+    <description>
+        A test app to show custom internet based content 
+    </description>
+
+    <author href="https://micahj.com" email="micah.murray@gmail.com">
+        Micah J. Murray
+    </author>
+    
+    <access origin="*" />
+
+    <!-- only build for android -->
+    <gap:platform name="android" />
+
+<!-- Customize your app and platform with the preference element. -->
+
+    <!-- Plugins -->
+
+    <!-- Core plugins -->
+ <!--
+    <gap:plugin name="org.apache.cordova.battery-status" />
+    <gap:plugin name="org.apache.cordova.camera" />
+	<gap:plugin name="org.apache.cordova.dialogs" />
+    <gap:plugin name="org.apache.cordova.file" />
+    <gap:plugin name="org.apache.cordova.vibration" />
+    <gap:plugin name="com.phonegap.plugins.pushplugin" />	
+	<gap:plugin name="org.apache.cordova.geolocation" />
+    <gap:plugin name="com.megster.cordova.bluetoothserial" />
+	<gap:plugin name="com.phonegap.plugins.barcodescanner" version="1.1.0" /> 
+	
+	<!-- 3rd party plugins -->
+	
+<!--
+    <gap:plugin name="org.apache.cordova.media-capture" />
+    <gap:plugin name="org.apache.cordova.console" />
+    <gap:plugin name="org.apache.cordova.contacts" />
+    <gap:plugin name="org.apache.cordova.device" />
+    <gap:plugin name="org.apache.cordova.device-motion" />
+    <gap:plugin name="org.apache.cordova.device-orientation" />
+   
+    <gap:plugin name="org.apache.cordova.file-transfer" />
+    <gap:plugin name="org.apache.cordova.globalization" />
+    <gap:plugin name="org.apache.cordova.inappbrowser" />
+    <gap:plugin name="org.apache.cordova.media" />
+    <gap:plugin name="org.apache.cordova.network-information" />
+    <gap:plugin name="org.apache.cordova.splashscreen" />
+    
+
+    
+    <feature name="http://api.phonegap.com/1.0/camera"/>
+    <feature name="http://api.phonegap.com/1.0/pushplugin"/>	
+	<feature name="http://api.phonegap.com/1.0/contacts"/>
+    <feature name="http://api.phonegap.com/1.0/file"/>
+    <feature name="http://api.phonegap.com/1.0/geolocation"/>
+    <feature name="http://api.phonegap.com/1.0/media"/>
+    <feature name="http://api.phonegap.com/1.0/network"/>
+    <feature name="http://api.phonegap.com/1.0/notification"/>	
+-->
+
+    <gap:plugin name="com.badrit.macaddress" version="0.1.0" />
+
+</widget>

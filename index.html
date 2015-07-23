@@ -7,10 +7,12 @@
 	</title>
 
 <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-<h1>Hellow World</h1>
-<h2 id="#mac"></h2>
+<h1 id="hello">Hello World?</h1>
+<h2 id="mac"></h2>
 
-<script>
+<script type="text/javascript">
+document.getElementById('hello').innerHTML = "Hello world!!!";
+
 window.MacAddress.getMacAddress(
 	function(macAddress) {alert(macAddress);},function(fail) {alert(fail);}
 );

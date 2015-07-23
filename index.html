@@ -7,20 +7,20 @@
 	</title>
 
 <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
-<script type="text/javascript" src="MacAddress.js"></script>
 <h1 id="hello">Hello World?</h1>
 <h2 id="mac"></h2>
 
 <script type="text/javascript">
-document.getElementById('hello').innerHTML = "Hello world again";
-
-document.getElementById('mac').innerHTML = window.MacAddress.getMacAddress();
-
-alert("did that work?");
+document.getElementById('hello').innerHTML = "Hello world!";
 
 window.MacAddress.getMacAddress(
-	function(macAddress) {alert(macAddress);},function(fail) {alert(fail);}
+	function(macAddress) {
+		alert(macAddress);
+		document.getElementById('mac').innerHTML = macAddress;
+	},	
+	function(failed) {
+		alert(failed);
+	}
 );
-
 
 </script>

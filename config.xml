@@ -23,7 +23,7 @@
     <gap:platform name="android" />
     
     <!-- list plugins to use -->
-    <gap:plugin name="com.badrit.macaddress" version="0.1.0" />
+    <gap:plugin name="com.badrit.macaddress" />
 
 
  <!--

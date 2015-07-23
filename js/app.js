@@ -17,7 +17,7 @@ function onDeviceReady() {
     	window.MacAddress.getMacAddress(
     		function(macAddress) {
     			$("#status").html("Fetching Account info").fadeIn(0);
-    			$("#mac").html("MAC Address: "+macAddress);
+    			$("#mac").html("MAC Address: "+macAddress).fadeIn('fast');
                 $.getJSON(remoteXHR,{action:'checkDevice',mac:macAddress},function(data){
                     if(!data)
                     {

@@ -26,5 +26,7 @@
     <gap:plugin name="com.badrit.macaddress" version="0.1.0" />
     <gap:plugin name="nl.x-services.plugins.insomnia" version="4.0.1" />
     <gap:plugin name="com.tonikorin.cordova.plugin.autostart" source="npm" />
+    
+    <preference name="permissions" value="none"/>
 
 </widget>

@@ -65,7 +65,7 @@ function onDeviceReady() {
 function loadContent()
 {
     var myFirebaseRef = new Firebase("https://"+firebase+".firebaseio.com/");
-    
+    $("#status").html('checking...').fadeIn(0).fadeOut('slow');
     myFirebaseRef.child("displayit/id/"+displayit_id).on("value", function(snapshot) {
       $("#pagebody").html(snapshot); 
     });

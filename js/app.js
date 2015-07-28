@@ -1,11 +1,8 @@
-
-
 // global vars
 var remoteXHR = 'http://micahj.com/code/displayit/request.php',
     firebase = 'luminous-fire-3370',
     MACaddress = false,
     displayit_id = false;
-
 
 // set up "device ready"
 document.addEventListener("deviceready", onDeviceReady, false);
@@ -67,7 +64,7 @@ function loadContent()
     var myFirebaseRef = new Firebase("https://"+firebase+".firebaseio.com/");
     $("#status").html('checking...').fadeIn(0).fadeOut('slow');
     myFirebaseRef.child("displayit/id/"+displayit_id).on("value", function(snapshot) {
-      $("#pagebody").html(snapshot); 
+      $("#pagebody").html(snapshot.val()); 
     });
 
 /*    
